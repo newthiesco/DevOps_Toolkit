@@ -1,0 +1,31 @@
+Steps to Deploy app to tomcat
+GIT REPO: https://github.com/jaiswaladi2468/TC.git
+INSTALL JENKINS/MAVEN/JDK
+sudo su
+apt update
+1- download java jar file from https://www.jenkins.io/download/
+2- run wget https://get.jenkins.io/war-stable/2.462.1/jenkins.war in /opt
+3- apt install -y maven (jdk)
+4- java -jar jenkins.war --httpPort=8084
+5- configure jenkins
+install plugins:
+- deploy to containers
+- stage pipeline
+
+INSTALL TOMCAT
+
+sudo su
+cd /opt
+ wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.28/bin/apache-tomcat-10.1.28.tar.gz
+tar xzvf apache-tomcat-10*tar.gz
+cd apache-tomcat-10.1.28/conf
+edit conf file to create user in tomcat
+vim conf/tomcat-users.xml
+edit /opt/apache-tomcat-10.1.28/webapps/manager/META-INF/context.xml  and webapps/host-manager/META-INF/context.xml
+to be able to access tomcat from the host IP
+create symbolic links to start and stop tomcat
+ln -s /opt/apache-tomcat-10.1.28/bin/startup.sh /usr/bin/startTomcat
+ln -s /opt/apache-tomcat-10.1.28/bin/shutdown.sh  /usr/bin/stopTomcat
+run stopTomcat  / startTomcat  to stop and start TOMCAT
+
+
