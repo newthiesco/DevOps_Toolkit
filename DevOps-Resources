@@ -1,0 +1,53 @@
+----------------------------------------------
+https://devopscube.com/
+---------------------------------------------
+https://devopscube.com/cka-exam-study-guide/
+============================================
+
+https://devopscube.com/jenkins-multibranch-pipeline-tutorial/
+
+https://devopscube.com/install-configure-jenkins-2-0/
+
+https://devopscube.com/how-to-install-and-configure-docker/
+
+https://devopscube.com/jenkins-build-agents-kubernetes/
+
+https://devopscube.com/configure-ssl-jenkins/
+
+https://devopscube.com/access-run-jenkins-port-80/
+
+https://devopscube.com/jenkins-backup-data-configurations/
+
+https://devopscube.com/enable-jenkins-status-checks-github/
+
+https://devopscube.com/how-to-install-latest-sonatype-nexus-3-on-linux/
+
+https://devopscube.com/setup-and-configure-sonarqube-on-linux/
+
+https://devopscube.com/become-devops-engineer/
+
+
+
+
+======================================
+DEVOPS PROJECTS
+https://devopscube.com/devops-projects/
+
+git clone https://github.com/techiescamp/devops-projects
+======================================
+
+
+UNDERSTANDING NGNIX
+https://medium.com/@nomannayeem/mastering-nginx-a-beginner-friendly-guide-to-building-a-fast-secure-and-scalable-web-server-cb075b423298 
+
+LEARN PYTHON FOR FREE
+https://www.educative.io/courses/learn-python-3-from-scratch?aff=KNLz
+
+INTRO TO GITOPS
+https://training.linuxfoundation.org/training/introduction-to-gitops-lfs169/
+
+
+
+sudo usermod -aG docker $USER && newgrp docker
+
+
