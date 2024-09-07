@@ -29,3 +29,12 @@ ln -s /opt/apache-tomcat-10.1.28/bin/shutdown.sh  /usr/bin/stopTomcat
 run stopTomcat  / startTomcat  to stop and start TOMCAT
 
 
+=============================================
+INSTALL SONARQUBE
+============================================
+https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/introduction/
+
+https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-docker/
+
+https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-zip-file/
+
