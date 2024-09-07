@@ -32,9 +32,9 @@ run stopTomcat  / startTomcat  to stop and start TOMCAT
 =============================================
 INSTALL SONARQUBE
 ============================================
-https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/introduction/
+[Install-Sonarqube-server](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/introduction/)
 
-https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-docker/
+[Installing-sonarqube-from-docker](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-docker/)
 
-https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-zip-file/
+[installing-sonarqube-from-zip](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-zip-file/)
 
