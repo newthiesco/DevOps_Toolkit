@@ -28,13 +28,16 @@
 
 [DevOps Projects](https://devopscube.com/devops-projects/)
 
-Clone DevOps Projects repository:
-```bash
-git clone https://github.com/techiescamp/devops-projects
-
-
 [Install-Sonarqube-server](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/introduction/)
 
 [Installing-sonarqube-from-docker](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-docker/)
 
 [installing-sonarqube-from-zip](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-zip-file/)
+
+
+
+Clone DevOps Projects repository:
+```bash
+git clone https://github.com/techiescamp/devops-projects
+
+
