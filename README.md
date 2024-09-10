@@ -62,11 +62,7 @@
 
 [Install and Configure Jenkins 2.0](https://devopscube.com/install-configure-jenkins-2-0/)
 
-                                                                                                                                                            [CKA Exam Study Guide](https://devopscube.com/cka-exam-study-guide/)
-
-
 [Jenkins Multibranch Pipeline Tutorial](https://devopscube.com/jenkins-multibranch-pipeline-tutorial/)
-                                                                                                                                                            [Install and Configure Jenkins 2.0](https://devopscube.com/install-configure-jenkins-2-0/)
 
 [How to Install and Configure Docker](https://devopscube.com/how-to-install-and-configure-docker/)
 
