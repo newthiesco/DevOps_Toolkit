@@ -35,6 +35,7 @@
 [installing-sonarqube-from-zip](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-sonarqube-from-zip-file/)
 
 [Docker Registry](https://medium.com/@meghasharmaa704/docker-registry-b59c72de0246)                                                                         
+
 [Step-by-step Guide: Installing and Switching Java Versions on Mac OSX](https://medium.com/@haroldfinch01/step-by-step-guide-installing-and-switching-java-versions-on-mac-osx-f3896b9872f4)
 
 [End-to-End CI/CD DevOps with Jenkins, Docker, Kubernetes, ArgoCD, GitHub Actions](https://medium.com/django-unleashed/technical-guide-end-to-end-ci-cd-devops-with-jenkins-docker-kubernetes-argocd-github-actions-fee466fe949e)
@@ -55,14 +56,14 @@
 
 [Automating Code Reviews in GitHub](https://devopscube.com/automating-code-reviews-github/)
 
----
-
 [DevOpsCube Homepage](https://devopscube.com/)
 
----
+[CKA Exam Study Guide](https://devopscube.com/cka-exam-study-guide/)
+
+[Install and Configure Jenkins 2.0](https://devopscube.com/install-configure-jenkins-2-0/)
+
                                                                                                                                                             [CKA Exam Study Guide](https://devopscube.com/cka-exam-study-guide/)
 
----
 
 [Jenkins Multibranch Pipeline Tutorial](https://devopscube.com/jenkins-multibranch-pipeline-tutorial/)
                                                                                                                                                             [Install and Configure Jenkins 2.0](https://devopscube.com/install-configure-jenkins-2-0/)
@@ -97,12 +98,9 @@
 
 `git clone https://github.com/techiescamp/devops-projects`
 
----
                                                                                                                                                             [Understanding NGINX: Mastering NGINX](https://medium.com/@nomannayeem/mastering-nginx-a-beginner-friendly-guide-to-building-a-fast-secure-and-scalable-web-server-cb075b423298)
-
----
                                                                                                                                                             [Learn Python for Free](https://www.educative.io/courses/learn-python-3-from-scratch?aff=KNLz)
-                                                                                                                                                            ---                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                     
 [Introduction to GitOps](https://training.linuxfoundation.org/training/introduction-to-gitops-lfs169/)
 
 
