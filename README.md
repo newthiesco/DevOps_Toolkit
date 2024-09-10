@@ -85,7 +85,6 @@
 
 [How to Become a DevOps Engineer](https://devopscube.com/become-devops-engineer/)
 
----
 
 [DevOps Projects](https://devopscube.com/devops-projects/)
 
@@ -144,15 +143,9 @@ git clone https://github.com/techiescamp/devops-projects
 
 [Automating Code Reviews in GitHub](https://devopscube.com/automating-code-reviews-github/)
 
----
-
 [DevOpsCube Homepage](https://devopscube.com/)
 
----
-
 [CKA Exam Study Guide](https://devopscube.com/cka-exam-study-guide/)
-
----
 
 [Jenkins Multibranch Pipeline Tutorial](https://devopscube.com/jenkins-multibranch-pipeline-tutorial/)
 
