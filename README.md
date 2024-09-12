@@ -98,7 +98,7 @@
 
 git clone https://github.com/techiescamp/devops-projects
 
-|------------------------------|
+
 |**Cloud DevSecOps Engineer**  | 
 |------------------------------|
 
