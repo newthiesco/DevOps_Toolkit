@@ -98,8 +98,9 @@
 
 git clone https://github.com/techiescamp/devops-projects
 
-
-**Cloud DevSecOps Engineer**
+|==============================|
+|**Cloud DevSecOps Engineer**  | 
+===============================|
 
 👋 Hello! I'm an AWS Cloud & DevSecOps Engineer with a passion for exploring diverse technologies. In my free time, I work on various DevSecOps projects, constantly enhancing my skills and knowledge in the field. Feel free to explore the technologies I frequently work with below!
 
