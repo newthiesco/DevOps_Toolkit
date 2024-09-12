@@ -97,3 +97,7 @@
 [Introduction to GitOps](https://training.linuxfoundation.org/training/introduction-to-gitops-lfs169/)
 
 git clone https://github.com/techiescamp/devops-projects
+
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,aws,azure,ai,bash,docker,git,github,githubactions,gitlab,jenkins,kubernetes,nginx,terraform,ansible,ubuntu,vim,vscode,react,py,nodejs,mysql,maven)](https://skillicons.dev)
+
