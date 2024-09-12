@@ -101,3 +101,8 @@ git clone https://github.com/techiescamp/devops-projects
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,aws,azure,ai,bash,docker,git,github,githubactions,gitlab,jenkins,kubernetes,nginx,terraform,ansible,ubuntu,vim,vscode,react,py,nodejs,mysql,maven)](https://skillicons.dev)
 
+
+
+**Cloud DevSecOps Engineer**
+
+👋 Hello! I'm an AWS Cloud & DevSecOps Engineer with a passion for exploring diverse technologies. In my free time, I work on various DevSecOps projects, constantly enhancing my skills and knowledge in the field. Feel free to explore the technologies I frequently work with below!
