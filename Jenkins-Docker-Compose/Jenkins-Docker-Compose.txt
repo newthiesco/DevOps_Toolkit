@@ -1,0 +1,37 @@
+Installation of Jenkins Using Docker Compose
+
+sudo hostnamectl set-hostname Jenkins
+sudo apt-get update
+sudo apt-get install docker-compose -y
+
+=======================================================
+Create docker-compose.yml using vi docker-compose.yml
+=======================================================
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    restart: always
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - /home/ubuntu/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+	  
+====================================================================================
+sudo docker-compose up -d 
+
+Run this command to retrieve the inital password
+sudo docker-compose logs --follow
+
+
+update docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo systemctl status docker
+
