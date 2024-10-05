@@ -1,0 +1,70 @@
+provider "aws" {
+  region = "us-east-1" # Specify your region
+}
+
+# Step 1: Create an IAM Role
+resource "aws_iam_role" "ec2_admin_role" {
+  name = "ec2_admin_role"
+  assume_role_policy = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }]
+  })
+}
+
+# Step 2: Attach the AdministratorAccess policy to the role
+resource "aws_iam_role_policy_attachment" "admin_role_policy_attach" {
+  role       = aws_iam_role.ec2_admin_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
+
+# Step 3: Create an Instance Profile for the EC2 instance to use the role
+resource "aws_iam_instance_profile" "ec2_instance_profile" {
+  name = "ec2_instance_profile"
+  role = aws_iam_role.ec2_admin_role.name
+}
+
+# Step 4: Security group to allow SSH access to the EC2 instance
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh"
+  description = "Allow SSH traffic"
+  vpc_id      = "vpc-059286c7940039251"  # Replace with your VPC ID
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1" # Allow all outbound traffic
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Step 5: Create EC2 instance with the IAM role attached
+resource "aws_instance" "admin_instance" {
+  ami                    = "ami-04a81a99f5ec58529"  # Replace with your AMI ID
+  instance_type          = "t2.micro"
+  key_name               = "your-key-name" # Replace with your key name
+  iam_instance_profile   = aws_iam_instance_profile.ec2_instance_profile.name
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+
+  tags = {
+    Name = "Admin-EC2-Instance"
+  }
+}
+
+# Output the public IP of the EC2 instance
+output "instance_public_ip" {
+  value = aws_instance.admin_instance.public_ip
+}
+

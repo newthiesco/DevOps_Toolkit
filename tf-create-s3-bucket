@@ -1,0 +1,74 @@
+provider "aws" {
+  region = var.region
+}
+
+# S3 bucket for website
+resource "aws_s3_bucket" "website_bucket" {
+  bucket = var.website_bucket
+  # No ACL needed, configure the block public access settings below
+}
+
+# Block public access to allow public website access
+resource "aws_s3_bucket_public_access_block" "website_bucket_access_block" {
+  bucket = aws_s3_bucket.website_bucket.id
+
+  block_public_acls       = true  # Block public ACLs
+  ignore_public_acls      = false # Ignore existing public ACLs
+  block_public_policy     = false # Allow public policies
+  restrict_public_buckets = false # Do not restrict public buckets
+}
+
+# Website configuration for the website bucket
+resource "aws_s3_bucket_website_configuration" "website_config" {
+  bucket = aws_s3_bucket.website_bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+}
+
+# S3 bucket versioning for the website bucket
+resource "aws_s3_bucket_versioning" "website_versioning" {
+  bucket = aws_s3_bucket.website_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# S3 bucket for artifacts
+resource "aws_s3_bucket" "artifact_bucket" {
+  bucket = var.artifact_bucket
+}
+
+# S3 bucket versioning for artifact bucket
+resource "aws_s3_bucket_versioning" "artifact_versioning" {
+  bucket = aws_s3_bucket.artifact_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Optionally, set a bucket policy to allow public access to the website bucket
+resource "aws_s3_bucket_policy" "website_bucket_policy" {
+  bucket = aws_s3_bucket.website_bucket.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "${aws_s3_bucket.website_bucket.arn}/*"
+      }
+    ]
+  })
+}
+
