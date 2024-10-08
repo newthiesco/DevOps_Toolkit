@@ -99,6 +99,12 @@
 git clone https://github.com/techiescamp/devops-projects
 
 
+https://github.com/kubermatic/kubeone#getting-started
+
+https://www.kubermatic.com/blog/keeping-the-state-of-apps-1-introduction-to-volume-
+and-volumemounts/
+
+
 |**Cloud DevSecOps Engineer**  | 
 |------------------------------|
 
