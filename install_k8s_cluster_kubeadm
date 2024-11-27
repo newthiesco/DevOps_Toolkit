@@ -1,3 +1,176 @@
+==========================================================================================
+
+KUBERNETES V 1.29 INSTALLATION ON ubuntu 22.04 LTS 
+
+https://iamunnip.hashnode.dev/building-a-kubernetes-v129-cluster-using-kubeadm
+
+==========================================================================================
+
+On Master Node 
+6443/tcp for Kubernetes API Server
+2379-2380 for etcd server client API
+6783/tcp,6784/udp for Weavenet CNI
+10248-10260 for Kubelet API, Kube-scheduler, Kube-controller-manager, Read-Only Kubelet API, Kubelet health
+80,8080,443 Generic Ports
+30000-32767 for NodePort Services
+
+On Slave Nodes 
+6783/tcp,6784/udp for Weavenet CNI
+10248-10260 for Kubelet API etc
+30000-32767 for NodePort Services
+
+Run on all nodes of the cluster as root user
+Disable SWAP
+You MUST disable swap in order for the kubelet to work properly
+Initial Configuration on all nodes
+
+swapoff -a
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+sudo hostnamectl set-hostname node-names
+
+# control-plane, node-1 and node-2
+
+sudo vi /etc/hosts
+
+172.31.81.34 control-plane
+172.31.81.93 node-1
+172.31.90.71 node-2
+
+# control-plane, node-1 and node-2
+
+cat << EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+
+sudo modprobe br_netfilter
+
+# control-plane, node-1 and node-2
+
+cat << EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+sudo sysctl --system
+
+
+# control-plane, node-1 and node-2
+
+sudo apt update
+
+sudo apt install -y containerd
+
+
+# control-plane, node-1 and node-2
+
+sudo mkdir -p /etc/containerd
+
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+
+
+# control-plane, node-1 and node-2
+
+sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+
+sudo systemctl restart containerd
+
+
+# control-plane, node-1 and node-2
+
+sudo apt update
+
+sudo apt install -y apt-transport-https ca-certificates curl gpg
+
+# control-plane, node-1 and node-2
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+# control-plane, node-1 and node-2
+
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+# control-plane, node-1 and node-2
+
+sudo apt update
+
+sudo apt install -y kubeadm=1.29.0-1.1 kubelet=1.29.0-1.1 kubectl=1.29.0-1.1
+
+sudo apt-mark hold kubeadm kubelet kubectl
+
+
+Initialize the cluster by using kubeadm on the control plane
+# control-plane
+
+sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.29.0
+# control-plane
+
+mkdir -p $HOME/.kube
+
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl get nodes
+
+# control-plane
+
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.4/manifests/calico.yaml
+kubectl -n kube-system get pods
+
+# control-plane
+
+kubeadm token create --print-join-command
+
+# node-1 and node-2
+
+sudo kubeadm join 172.31.81.34:6443 --token kvzidi.g65h3s8psp2h3dc6 --discovery-token-ca-cert-hash sha256:56c208595372c1073b47fa47e8de65922812a6ec322d938bd5ac64d8966c1f27
+
+kubectl get nodes
+
+-------------------------------------------------------------------------------------
+
+WordPress on Kubernetes Tutorial
+https://kubeadm.org/introduction/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    =============================================================================
       A Step-by-Step Guide to Installing Kubernetes Cluster on Ubuntu 22.04
    =============================================================================
